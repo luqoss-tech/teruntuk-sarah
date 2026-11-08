@@ -32,3 +32,28 @@ body.on .hero .tag,body.on .hero .date{opacity:1}
 
 /* hormati tetapan "kurangkan gerakan" */
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+
+/* ===== Version 2 ===== */
+/* peralihan lembut bila tukar mod */
+html.tt *{transition:background-color .45s,color .45s,border-color .45s!important}
+
+/* wish card: senget sikit, naik ke atas dari garisan bila disentuh / hover */
+.wc{transition:transform .35s cubic-bezier(.2,1.4,.4,1),box-shadow .35s ease}
+.wc:nth-child(odd){transform:rotate(-1.3deg)}
+.wc:nth-child(even){transform:rotate(1.1deg)}
+.wc.up,.wc:focus-visible{transform:translateY(-16px) rotate(0);box-shadow:0 22px 34px -10px var(--glow)}
+@media (hover:hover){.wc:hover{transform:translateY(-16px) rotate(0);box-shadow:0 22px 34px -10px var(--glow)}}
+
+/* timeline: auto bergerak ke atas, berhenti bila hover / sentuh */
+.tl-track{animation:tlup 26s linear infinite;will-change:transform}
+@keyframes tlup{to{transform:translateY(-50%)}}
+@media (hover:hover){.tl-view:hover .tl-track{animation-play-state:paused}}
+.tl-view.hold .tl-track{animation-play-state:paused}
+.tl li::after{transition:background-color .4s,transform .4s,box-shadow .4s}
+
+/* jam countdown berputar */
+.cd-clock .hand{transform-origin:22px 22px;animation:tick 12s linear infinite}
+@keyframes tick{to{transform:rotate(360deg)}}
+
+/* kurangkan gerakan: timeline boleh di-scroll manual */
+@media (prefers-reduced-motion:reduce){.tl-view{overflow-y:auto}.tl-set[aria-hidden]{display:none}}

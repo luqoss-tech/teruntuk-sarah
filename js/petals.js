@@ -5,7 +5,9 @@
   var cx = cv.getContext('2d');
   var W, H;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cols = ['#ff4d8d', '#ffb3d1', '#ffd6e7', '#8b1e3f', '#c2185b'];
+  var darkCols = ['#ff4d8d', '#ffb3d1', '#ffd6e7', '#8b1e3f', '#c2185b'];
+  var lightCols = ['#e0245e', '#ff4d8d', '#ff7aa8', '#c2185b', '#8b1e3f'];
+  var cols = darkCols;
   var petals = [], hearts = [], running = false;
 
   function size() {
@@ -81,5 +83,11 @@
     }
   }
 
-  window.Petals = { start: start, burst: burst };
+  // Tukar warna kelopak ikut mod siang / malam
+  function setTheme(t) {
+    cols = t === 'light' ? lightCols : darkCols;
+    petals.forEach(function (q) { q.c = cols[Math.random() * cols.length | 0]; });
+  }
+
+  window.Petals = { start: start, burst: burst, setTheme: setTheme };
 })();

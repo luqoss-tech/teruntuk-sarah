@@ -8,11 +8,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌹%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Great+Vibes&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Great+Vibes&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animations.css">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("aina-theme")==="light"?"light":"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
 </head>
 <body>
+<!-- Version 2 -->
+<div id="theme"><button id="tbtn" type="button" aria-label="Tukar ke mod siang">☀️</button></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <symbol id="rose" viewBox="0 0 100 100">
 <circle cx="50" cy="50" r="42" fill="#8b1e3f"/>
@@ -41,11 +44,16 @@
 <p class="tag script">wanita terindah 🌹</p>
 </section>
 
-<section class="letter">
-<div>
-<p class="first serif">Happy belated birthday wanita terindah.</p>
-<p class="serif">Maaf kalau the way I move not meet your expectation. But this is the best i think this is one of the best thing i can made for you &lt;3</p>
+<section class="wish">
+<h2 class="script">Wish untuk awak</h2>
+<div class="wish-row" id="wishRow">
+<div class="wish-track">
+<article class="wc" tabindex="0"><p>Happy belated birthday wanita terindah.</p><span>dari saya, untuk Aina ♥</span></article>
+<article class="wc" tabindex="0"><p>Maaf kalau the way I move not meet your expectation.</p><span>dari saya, untuk Aina ♥</span></article>
+<article class="wc" tabindex="0"><p>But this is the best i think this is one of the best thing i can made for you &lt;3</p><span>dari saya, untuk Aina ♥</span></article>
 </div>
+</div>
+<p class="hint">slide ke tepi ↔</p>
 </section>
 
 <section class="gal">
@@ -55,6 +63,29 @@
 <figure class="ph"><span>Gambar 2</span><img src="images/photo-2.jpg" alt="Kenangan 2" onerror="this.remove()"></figure>
 <figure class="ph"><span>Gambar 3</span><img src="images/photo-3.jpg" alt="Kenangan 3" onerror="this.remove()"></figure>
 <figure class="ph"><span>Gambar 4</span><img src="images/photo-4.jpg" alt="Kenangan 4" onerror="this.remove()"></figure>
+</div>
+</section>
+
+<section class="tl-sec">
+<h2 class="script">Perjalanan Aina</h2>
+<div class="tl-box"><div class="tl-view" id="tlView"><div class="tl-track" id="tlTrack">
+<ol class="tl tl-set">
+<li><time>2003</time><b>Lahir</b><i>Bermulanya kisah Aina</i></li>
+<li><time>2010</time><b>Sekolah rendah</b><i>Langkah pertama ke dunia ilmu</i></li>
+<li><time>2016</time><b>Sekolah menengah</b><i>Belajar jadi lebih berani</i></li>
+<li><time>2021</time><b>Tingkatan 6</b><i>Berusaha untuk impian</i></li>
+<li><time>2023</time><b>Alam universiti</b><i>Bab baru yang masih ditulis</i></li>
+</ol>
+</div></div></div>
+</section>
+
+<section class="cd-sec">
+<h2 class="script">Birthday seterusnya</h2>
+<div class="cd">
+<svg class="cd-clock" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19"/><line class="hand" x1="22" y1="22" x2="22" y2="10"/><line x1="22" y1="22" x2="30" y2="26"/></svg>
+<b id="cdDays">--</b>
+<small id="cdLabel">hari ke 30 Okt 2027</small>
+<em id="cdSub"></em>
 </div>
 </section>
 

@@ -5,6 +5,23 @@
   var mbtn = document.getElementById('mbtn');
   var intro = document.getElementById('intro');
 
+  // Mod siang / malam (default: malam, pilihan disimpan)
+  var root = document.documentElement;
+  var tbtn = document.getElementById('tbtn');
+  function applyTheme(t, save) {
+    root.setAttribute('data-theme', t);
+    tbtn.textContent = t === 'light' ? '🌙' : '☀️';
+    tbtn.setAttribute('aria-label', t === 'light' ? 'Tukar ke mod malam' : 'Tukar ke mod siang');
+    Petals.setTheme(t);
+    if (save) { try { localStorage.setItem('aina-theme', t); } catch (e) {} }
+  }
+  applyTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
+  tbtn.addEventListener('click', function () {
+    root.classList.add('tt');
+    applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light', true);
+    setTimeout(function () { root.classList.remove('tt'); }, 500);
+  });
+
   function setMusicLabel(on) {
     mbtn.textContent = on ? '♪ Muzik: on' : '♪ Muzik: off';
   }
