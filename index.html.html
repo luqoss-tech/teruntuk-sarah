@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Untuk Aina Maisarah</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌹%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Great+Vibes&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="rose" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="42" fill="#8b1e3f"/>
+<g fill="#c2185b">
+<ellipse cx="50" cy="30" rx="20" ry="26"/><ellipse cx="50" cy="30" rx="20" ry="26" transform="rotate(72 50 50)"/><ellipse cx="50" cy="30" rx="20" ry="26" transform="rotate(144 50 50)"/><ellipse cx="50" cy="30" rx="20" ry="26" transform="rotate(216 50 50)"/><ellipse cx="50" cy="30" rx="20" ry="26" transform="rotate(288 50 50)"/>
+</g>
+<g fill="#ff4d8d">
+<ellipse cx="50" cy="38" rx="14" ry="18" transform="rotate(36 50 50)"/><ellipse cx="50" cy="38" rx="14" ry="18" transform="rotate(108 50 50)"/><ellipse cx="50" cy="38" rx="14" ry="18" transform="rotate(180 50 50)"/><ellipse cx="50" cy="38" rx="14" ry="18" transform="rotate(252 50 50)"/><ellipse cx="50" cy="38" rx="14" ry="18" transform="rotate(324 50 50)"/>
+</g>
+<circle cx="50" cy="50" r="11" fill="#ffb3d1"/>
+<path d="M50 50 m-6 0 a6 6 0 1 1 6 6 a10 10 0 1 1 -10 -10" fill="none" stroke="#8b1e3f" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+</svg>
+
+<button id="intro" type="button" aria-label="Buka kejutan">
+<svg viewBox="0 0 100 100"><use href="#rose"/></svg>
+<span class="serif" style="font-size:1.5rem">Tap untuk buka, ada sesuatu untuk awak 🌹</span>
+</button>
+
+<canvas id="fx"></canvas>
+
+<main>
+<section class="hero">
+<p class="date">30 Oktober</p>
+<h1 id="name" class="script" aria-label="Aina Maisarah"></h1>
+<p class="tag script">wanita terindah 🌹</p>
+</section>
+
+<section class="letter">
+<div>
+<p class="first serif">Happy belated birthday wanita terindah.</p>
+<p class="serif">Maaf kalau the way I move not meet your expectation. But this is the best i think this is one of the best thing i can made for you &lt;3</p>
+</div>
+</section>
+
+<section class="gal">
+<h2 class="script">Kenangan kita</h2>
+<div class="grid">
+<figure class="ph"><span>Gambar 1</span><img src="images/photo-1.jpg" alt="Kenangan 1" onerror="this.remove()"></figure>
+<figure class="ph"><span>Gambar 2</span><img src="images/photo-2.jpg" alt="Kenangan 2" onerror="this.remove()"></figure>
+<figure class="ph"><span>Gambar 3</span><img src="images/photo-3.jpg" alt="Kenangan 3" onerror="this.remove()"></figure>
+<figure class="ph"><span>Gambar 4</span><img src="images/photo-4.jpg" alt="Kenangan 4" onerror="this.remove()"></figure>
+</div>
+</section>
+
+<section class="act">
+<h2 class="script">Satu lagi untuk awak</h2>
+<button id="love" type="button">Tekan kalau awak rasa dihargai 💗</button>
+<svg id="bloom" viewBox="0 0 100 100" aria-hidden="true"><use href="#rose"/></svg>
+<p id="msg" class="serif" aria-live="polite"></p>
+</section>
+
+<footer>Dibuat dengan sepenuh hati, untuk Aina Maisarah ♥</footer>
+</main>
+
+<div id="music"><button id="mbtn" type="button">♪ Muzik</button></div>
+<audio id="bgm" src="audio/coming-up-roses.mp3" loop preload="auto"></audio>
+
+<!-- Susunan penting: petals.js dulu, kemudian main.js dan interactions.js -->
+<script src="js/petals.js"></script>
+<script src="js/main.js"></script>
+<script src="js/interactions.js"></script>
+</body>
+</html>
