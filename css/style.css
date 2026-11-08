@@ -1,7 +1,7 @@
 /* style.css — tema hitam & pink ros: token warna, layout, susunan section */
 
-:root,:root[data-theme="dark"]{--bg:#0a0a0a;--bg2:#14070c;--rose:#ff4d8d;--soft:#ffb3d1;--blush:#ffd6e7;--wine:#8b1e3f;--text:#ffd6e7;--muted:#c99ab0;--card:#1a0a11;--card-ink:#ffd6e7;--line:rgba(255,77,141,.35);--glow:rgba(255,77,141,.45);--edge:#ff4d8d;--ph1:#8b1e3f;--ph2:#14070c;color-scheme:dark}
-:root[data-theme="light"]{--bg:#ffe4ea;--bg2:#fff1f4;--rose:#e0245e;--soft:#c2185b;--blush:#4a1626;--wine:#8b1e3f;--text:#4a1626;--muted:#8a5568;--card:#fffdf8;--card-ink:#4a1626;--line:rgba(74,22,38,.22);--glow:rgba(224,36,94,.35);--edge:#4a1626;--ph1:#ffc2d4;--ph2:#fff1f4;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0a0a0a;--bg2:#14070c;--rose:#ff4d8d;--soft:#ffb3d1;--blush:#ffd6e7;--wine:#8b1e3f;--text:#ffd6e7;--muted:#c99ab0;--card:#1a0a11;--card-ink:#ffd6e7;--line:rgba(255,77,141,.35);--glow:rgba(255,77,141,.45);--edge:#ff4d8d;--ph1:#8b1e3f;--ph2:#14070c;color-scheme:dark}
+:root,:root[data-theme="light"]{--bg:#ffe4ea;--bg2:#fff1f4;--rose:#e0245e;--soft:#c2185b;--blush:#4a1626;--wine:#8b1e3f;--text:#4a1626;--muted:#8a5568;--card:#fffdf8;--card-ink:#4a1626;--line:rgba(74,22,38,.22);--glow:rgba(224,36,94,.35);--edge:#4a1626;--ph1:#ffc2d4;--ph2:#fff1f4;color-scheme:light}
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
@@ -55,7 +55,7 @@ button:focus-visible{outline:2px solid var(--soft);outline-offset:3px}
 footer{position:relative;z-index:6;text-align:center;color:var(--muted);font-size:.85rem;padding:30px 24px 110px}
 
 /* butang muzik */
-#music{position:fixed;right:14px;bottom:0;z-index:20;padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+#music{position:fixed;right:14px;bottom:0;z-index:20;display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
 #music button{font:inherit;font-size:.85rem;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;backdrop-filter:blur(6px)}
 #music button:disabled{opacity:.5;cursor:default}
 body:not(.on) #music{display:none}
@@ -69,7 +69,7 @@ body:not(.on) #music{display:none}
 .tl-sec{position:relative;z-index:6}
 .tl-sec h2{font-size:2.6rem;color:var(--rose);text-align:center;margin-bottom:26px}
 .tl-box{padding:8px 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 0 50px -14px var(--glow)}
-.tl-view{height:340px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}
+.tl-view{height:340px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;user-select:none;-webkit-user-select:none;-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}
 .tl-set{margin:0;padding:0;list-style:none}
 .tl li{position:relative;min-height:96px;padding:0 0 34px 56px}
 .tl li::before{content:"";position:absolute;left:12px;top:32px;bottom:-4px;border-left:2px dashed var(--edge)}
@@ -89,3 +89,8 @@ body:not(.on) #music{display:none}
 .cd b{font-size:4.2rem;line-height:1.05;font-weight:500;color:var(--rose)}
 .cd small{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .cd em{margin-top:10px;font-style:normal;font-size:.9rem;color:var(--card-ink)}
+
+/* ===== Version 3: butang "Mula semula" di atas butang muzik (dalam #music) ===== */
+/* ===== Version 4: default mod siang; timeline boleh di-scroll atas & bawah ===== */
+.tl-view::-webkit-scrollbar{display:none}
+.tl-sec .hint{margin-top:12px}

@@ -5,7 +5,7 @@
   var mbtn = document.getElementById('mbtn');
   var intro = document.getElementById('intro');
 
-  // Mod siang / malam (default: malam, pilihan disimpan)
+  // Mod siang / malam (default: siang, pilihan disimpan)
   var root = document.documentElement;
   var tbtn = document.getElementById('tbtn');
   function applyTheme(t, save) {
@@ -13,9 +13,9 @@
     tbtn.textContent = t === 'light' ? '🌙' : '☀️';
     tbtn.setAttribute('aria-label', t === 'light' ? 'Tukar ke mod malam' : 'Tukar ke mod siang');
     Petals.setTheme(t);
-    if (save) { try { localStorage.setItem('aina-theme', t); } catch (e) {} }
+    if (save) { try { localStorage.setItem('aina-theme-v4', t); } catch (e) {} }
   }
-  applyTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
+  applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light', false);
   tbtn.addEventListener('click', function () {
     root.classList.add('tt');
     applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light', true);
@@ -40,6 +40,14 @@
       bgm.pause();
       setMusicLabel(false);
     }
+  });
+
+  // Version 3: butang "Mula semula" — refresh page, kembali ke skrin "tap untuk buka"
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  document.getElementById('rbtn').addEventListener('click', function () {
+    bgm.pause();
+    window.scrollTo(0, 0);
+    location.reload();
   });
 
   // Nama ditaip huruf demi huruf
