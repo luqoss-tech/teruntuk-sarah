@@ -1,0 +1,54 @@
+/* style.css — tema hitam & pink ros: token warna, layout, susunan section */
+
+:root,:root[data-theme="dark"]{--bg:#0a0a0a;--bg2:#14070c;--rose:#ff4d8d;--soft:#ffb3d1;--blush:#ffd6e7;--wine:#8b1e3f;--text:#ffd6e7;--muted:#c99ab0;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--bg2:#14070c;--rose:#ff4d8d;--soft:#ffb3d1;--blush:#ffd6e7;--wine:#8b1e3f;--text:#ffd6e7;--muted:#c99ab0}}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,var(--bg2),var(--bg) 60%) var(--bg);color:var(--text);font-family:"Poppins",system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+body:not(.on) main{visibility:hidden}
+h1,h2{font-weight:400;margin:0}
+.script{font-family:"Great Vibes","Brush Script MT",cursive}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+section{max-width:640px;margin:0 auto;padding:72px 24px}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+button:focus-visible{outline:2px solid var(--soft);outline-offset:3px}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:var(--bg);border:0;color:var(--soft);font:inherit;cursor:pointer;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#intro svg{width:150px;height:150px;filter:drop-shadow(0 0 28px rgba(255,77,141,.55))}
+#intro span{font-size:1.15rem;letter-spacing:.04em}
+
+/* hero */
+.hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:6}
+.hero p{margin:0;color:var(--muted)}
+#name{font-size:clamp(3.4rem,17vw,6.4rem);line-height:1.1;color:var(--rose);text-shadow:0 0 34px rgba(255,77,141,.45);min-height:1.2em;margin:10px 0 6px}
+.hero .tag{font-size:1.5rem;color:var(--soft)}
+
+/* wish */
+.letter{position:relative;z-index:6;text-align:center}
+.letter div{border:1px solid rgba(255,77,141,.35);border-radius:6px;padding:34px 26px;background:linear-gradient(160deg,rgba(139,30,63,.28),rgba(20,7,12,.6));box-shadow:0 0 60px rgba(139,30,63,.35)}
+.letter p{margin:0;font-size:clamp(1.35rem,5.4vw,1.75rem);line-height:1.6;font-style:italic;color:var(--blush)}
+.letter .first{font-size:clamp(1.7rem,6.6vw,2.1rem);font-style:normal;color:var(--rose);margin-bottom:14px}
+
+/* gallery */
+.gal{position:relative;z-index:6}
+.gal h2{font-size:2.6rem;color:var(--rose);text-align:center;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ph{position:relative;margin:0;aspect-ratio:3/4;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--muted);font-size:.85rem;background:linear-gradient(150deg,var(--wine),var(--bg2));border:1px solid rgba(255,179,209,.25);cursor:pointer}
+.ph::before{content:"\1F339";font-size:2.2rem}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* butang interaktif */
+.act{position:relative;z-index:6;text-align:center}
+.act h2{font-size:2.4rem;color:var(--soft);margin-bottom:22px}
+#love{font:inherit;font-weight:500;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,var(--rose),var(--wine));border:0;border-radius:999px;padding:16px 30px;cursor:pointer;box-shadow:0 0 30px rgba(255,77,141,.6)}
+#bloom{width:170px;height:170px;margin:34px auto 0;display:block;filter:drop-shadow(0 0 24px rgba(255,77,141,.6))}
+#msg{min-height:3.4em;margin:18px 0 0;font-size:1.6rem;line-height:1.4;color:var(--blush)}
+footer{position:relative;z-index:6;text-align:center;color:var(--muted);font-size:.85rem;padding:30px 24px 110px}
+
+/* butang muzik */
+#music{position:fixed;right:14px;bottom:0;z-index:20;padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+#music button{font:inherit;font-size:.85rem;color:var(--blush);background:rgba(20,7,12,.82);border:1px solid rgba(255,77,141,.5);border-radius:999px;padding:9px 16px;cursor:pointer;backdrop-filter:blur(6px)}
+#music button:disabled{opacity:.5;cursor:default}
+body:not(.on) #music{display:none}

@@ -1,0 +1,34 @@
+/* animations.css — semua keyframes, transition dan kesan gerakan (load SELEPAS style.css) */
+
+/* intro: ros berdenyut + fade keluar */
+#intro{transition:opacity 1.2s ease,visibility 1.2s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro svg{animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* nama ditaip + kursor berkelip */
+#name.typing::after{content:"";display:inline-block;width:2px;height:.8em;background:var(--soft);margin-left:4px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* hero: tarikh dan tagline muncul perlahan */
+.hero .date{opacity:0;transition:opacity 1.6s ease 2s}
+.hero .tag{opacity:0;transition:opacity 1.6s ease 2.8s}
+body.on .hero .tag,body.on .hero .date{opacity:1}
+
+/* galeri: senget sikit, tegak + glow bila hover/tap */
+.ph{transition:transform .35s ease,box-shadow .35s ease}
+.ph:nth-child(odd){transform:rotate(-1.5deg)}
+.ph:nth-child(even){transform:rotate(1.5deg) translateY(14px)}
+.ph:hover,.ph.lit{transform:rotate(0) scale(1.04);box-shadow:0 0 34px rgba(255,77,141,.6)}
+
+/* butang utama: glow berdenyut */
+#love{animation:glow 2s ease-in-out infinite;transition:transform .15s}
+#love:active{transform:scale(.94)}
+@keyframes glow{50%{box-shadow:0 0 52px rgba(255,77,141,.95)}}
+
+/* ros mekar */
+#bloom{transform:scale(0) rotate(-90deg);opacity:0;transition:transform 1.4s cubic-bezier(.2,1.2,.3,1),opacity .8s}
+#bloom.show{transform:scale(1) rotate(0);opacity:1}
+
+/* hormati tetapan "kurangkan gerakan" */
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
