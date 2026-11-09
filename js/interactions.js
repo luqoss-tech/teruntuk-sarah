@@ -15,7 +15,7 @@
     'I tengok you hardworking, I incredibly proud of you Sarah.',
     'Terima kasih sebab wujud dalam dunia ni you.',
     'Sarah a day can keep the doctor away',
-    'Satu kelopak ros, satu doa kesejahteraan untuk awak.'
+    'Satu kelopak ros, satu doa kesejahteraan untuk awak. Sejuta kelopak ros, infinite doa kesejahteraan buat awak.'
   ];
   var n = 0;
 
